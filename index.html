@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Songwriter</title>
+</head>
+<body>
+    <h1>Chord Progression</h1>
+    <form>
+      <legend>Key</legend>
+      <select name="key" id="key-sign">
+        <option value="c">C</option>
+        <option value="c-sharp-d-flat">C#/Db</option>
+        <option value="d">D</option>
+        <option value="c-sharp-e-flat">D#/Eb</option>
+        <option value="e">E</option>
+        <option value="f">F</option>
+        <option value="f-sharp-g-flat">F#/Gb</option>
+        <option value="g">G</option>
+        <option value="g-sharp-a-flat">G#/Ab</option>
+        <option value="a">A</option>
+        <option value="a-sharp-b-flat">A#/Bb</option>
+        <option value="b">B</option>
+      </select>
+      <legend>Major/Minor</legend>
+      <select name="maj-min" id="maj-min">
+         <option value="major">Major</option>
+         <option value="minor">Minor</option>
+       </select>
+      <button class="write-song">Write A Song</button>
+    </form>
+    <section class='song'>
+      <hr>
+      <h2>Verse</h2>
+      <hr>
+      <section class='verse one'> 
+      </section>
+     </section>
+    <section class='song'>
+      <hr>
+      <h2>Chorus</h2>
+      <hr>
+      <section class='verse two'> 
+        <div class='chord'>C</div>
+        <div class='chord'>Am</div>
+        <div class='chord'>F</div>
+        <div class='chord'>G</div>
+      </section>
+     </section>
+     <script src="main.js"></script>
+  </body>
+</html>

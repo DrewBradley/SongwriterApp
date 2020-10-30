@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(65,34,195);
+    background: linear-gradient(0deg, rgba(65,34,195,1) 75%, rgba(45,253,252,1) 100%);
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 4em;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  
+  .song {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    background-color: #1c0a666a;
+  }
+  
+  .verse {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .chord {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #444957;
+    border-radius: 10px;
+    width: 15%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 3em;
+  }
+  
