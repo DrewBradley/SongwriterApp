@@ -70,16 +70,16 @@ function showChords(){
 
 function keySelector() {
   switch(keySignature.value) {
-  case 'c':
+    case 'c':
     key = chords[0];
     break;
-  case 'c#/db':
+    case 'c-sharp-d-flat':
     key = chords[1];
     break;
     case 'd':
     key = chords[2];
     break;
-    case 'd#/eb':
+    case 'd-sharp-e-flat':
     key = chords[3];
     break;
     case 'e':
@@ -88,19 +88,19 @@ function keySelector() {
     case 'f':
     key = chords[5];
     break;
-    case 'f#/gb':
+    case 'f-sharp-g-flat':
     key = chords[6];
     break;
     case 'g':
     key = chords[7];
     break;
-    case 'g#/ab':
+    case 'g-sharp-a-flat':
     key = chords[8];
     break;
     case 'a':
     key = chords[9];
     break;
-    case 'a#/bb':
+    case 'a-sharp-b-flat':
     key = chords[10];
     break;
     case 'b':
