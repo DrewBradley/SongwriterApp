@@ -12,37 +12,58 @@ var chords = [['C', 'Dm', 'Em', 'F', 'G', 'Am'],
               ['B', 'C#m', 'D#m', 'E', 'F#', 'G#m']]
 
 var verseChords = [];
+var chorusChords = [];
 
 var keySignature = document.querySelector('#key-sign');
 var writeSong = document.querySelector('.write-song');
-var verseOne = document.querySelector('.one');
+var verseOne = document.querySelector('.verse');
+var chorus = document.querySelector('.chorus');
 
 var key = chords[0];
 
 writeSong.addEventListener('click', chordProgression);
 
-function randomChordGenerator() {
+function randomChordGenerator(array) {
   var randomNum = Math.floor(Math.random()*6);
   var newChord = key[randomNum];
-  verseChords.push(newChord);
+  array.push(newChord);
 };
 
 function chordProgression(event){
   event.preventDefault();
   keySelector();
-  verseChords.push(key[0]);
-  for (var i = 0; i < 3; i++){
-    randomChordGenerator();
-  }
+  verseMaker();
+  chorusMaker();
   showChords();
   console.log(verseChords);
 }
 
-function showChords(){
+function verseMaker() {
+  verseChords = [];
   verseOne.innerHTML = '';
+  verseChords.push(key[0]);
+  for (var i = 0; i < 3; i++){
+    randomChordGenerator(verseChords);
+  }
+}
+
+function chorusMaker() {
+  chorusChords = [];
+  chorus.innerHTML = '';
+  for (var i = 0; i < 4; i++){
+    randomChordGenerator(chorusChords);
+  }
+}
+
+function showChords(){  
   for (var i = 0; i < verseChords.length; i++){
     verseOne.innerHTML += `
       <div class='chord'>${verseChords[i]}</div>
+    `
+  }
+  for (var i = 0; i < chorusChords.length; i++){
+    chorus.innerHTML += `
+      <div class='chord'>${chorusChords[i]}</div>
     `
   }
 }
@@ -66,6 +87,24 @@ function keySelector() {
     break;
     case 'f':
     key = chords[5];
+    break;
+    case 'f#/gb':
+    key = chords[6];
+    break;
+    case 'g':
+    key = chords[7];
+    break;
+    case 'g#/ab':
+    key = chords[8];
+    break;
+    case 'a':
+    key = chords[9];
+    break;
+    case 'a#/bb':
+    key = chords[10];
+    break;
+    case 'b':
+    key = chords[11];
     break;
   default:
   }

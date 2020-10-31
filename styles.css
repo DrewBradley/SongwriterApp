@@ -33,7 +33,7 @@ body {
     background-color: #1c0a666a;
   }
   
-  .verse {
+  .verse, .chorus {
     display: flex;
     flex-wrap: wrap;
   }
