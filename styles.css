@@ -54,6 +54,14 @@ body {
     padding: 10px;
     font-size: 3em;
     box-shadow: 0px 0px 8px 0px #000000;
+    transition: all .05s ease;
+    cursor: pointer;
+  }
+
+  .playing {
+    transform: scale(1.1);
+    border-color: white;
+    box-shadow: 0 0 1rem #000000;
   }
 
 

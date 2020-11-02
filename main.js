@@ -16,12 +16,41 @@ var chorusChords = [];
 
 var keySignature = document.querySelector('#key-sign');
 var writeSong = document.querySelector('.write-song');
+var song = document.querySelector('.full-song');
 var verseOne = document.querySelector('.verse');
 var chorus = document.querySelector('.chorus');
+
 
 var key = chords[0];
 
 writeSong.addEventListener('click', chordProgression);
+
+song.addEventListener('mousedown', function(event) {
+    if (event.target.className === 'chord') {
+        playSound(event.target);
+    }
+});
+
+function playSound(e) {
+  var eventText = e.innerText
+  const audio = document.querySelector(`audio[class="${eventText}"]`);
+  if (!audio) return;
+  e.classList.add('playing');
+  audio.currentTime = 0;
+  audio.play();
+};
+
+song.addEventListener('mouseup', function(event) {
+  if (event.target.className === 'chord playing') {
+    if (event.target.propertyName !== 'transform') {
+      event.target.classList.remove('playing');
+      }
+      var eventText = event.target.innerText;
+      var audio = document.querySelector(`audio[class="${eventText} playing"]`);
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
 
 function randomChordGenerator(array) {
   var randomNum = Math.floor(Math.random()*6);
@@ -35,7 +64,6 @@ function chordProgression(event){
   verseMaker();
   chorusMaker();
   showChords();
-  console.log(verseChords);
 }
 
 function verseMaker() {
@@ -109,3 +137,7 @@ function keySelector() {
   default:
   }
 }
+
+// var sounds = Array.from(document.querySelectorAll('.playing'));
+// sounds.forEach(sound => sound.addEventListener('transitionend', removeTransition));
+// window.addEventListener('click', playSound)
