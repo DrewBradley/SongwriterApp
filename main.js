@@ -15,6 +15,7 @@ var verseChords = [];
 var chorusChords = [];
 
 var keySignature = document.querySelector('#key-sign');
+var majMin = document.querySelector('#maj-min');
 var writeSong = document.querySelector('.write-song');
 var song = document.querySelector('.full-song');
 var verseOne = document.querySelector('.verse');
@@ -29,6 +30,11 @@ song.addEventListener('mousedown', function(event) {
     if (event.target.className === 'chord') {
         playSound(event.target);
     }
+});
+song.addEventListener('touchstart', function(event) {
+  if (event.target.className === 'chord') {
+      playSound(event.target);
+  }
 });
 
 function playSound(e) {
@@ -46,11 +52,23 @@ song.addEventListener('mouseup', function(event) {
       event.target.classList.remove('playing');
       }
       var eventText = event.target.innerText;
-      var audio = document.querySelector(`audio[class="${eventText} playing"]`);
+      var audio = document.querySelector(`audio[class="${eventText}"]`);
       audio.pause();
       audio.currentTime = 0;
     }
   });
+
+  song.addEventListener('touchend', function(event) {
+    if (event.target.className === 'chord playing') {
+      if (event.target.propertyName !== 'transform') {
+        event.target.classList.remove('playing');
+        }
+        var eventText = event.target.innerText;
+        var audio = document.querySelector(`audio[class="${eventText}"]`);
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
 
 function randomChordGenerator(array) {
   var randomNum = Math.floor(Math.random()*6);
@@ -60,7 +78,11 @@ function randomChordGenerator(array) {
 
 function chordProgression(event){
   event.preventDefault();
-  keySelector();
+  if (majMin.value === 'major'){
+    keySelectorMajor();
+  }else if (majMin.value === 'minor'){
+    keySelectorMinor();;
+  }
   verseMaker();
   chorusMaker();
   showChords();
@@ -69,7 +91,11 @@ function chordProgression(event){
 function verseMaker() {
   verseChords = [];
   verseOne.innerHTML = '';
-  verseChords.push(key[0]);
+  if (majMin.value === 'major'){
+    verseChords.push(key[0]);
+  }else if (majMin.value === 'minor'){
+    verseChords.push(key[5]);
+  }
   for (var i = 0; i < 3; i++){
     randomChordGenerator(verseChords);
   }
@@ -96,7 +122,7 @@ function showChords(){
   }
 }
 
-function keySelector() {
+function keySelectorMajor() {
   switch(keySignature.value) {
     case 'c':
     key = chords[0];
@@ -133,6 +159,48 @@ function keySelector() {
     break;
     case 'b':
     key = chords[11];
+    break;
+  default:
+  }
+}
+
+function keySelectorMinor() {
+  switch(keySignature.value) {
+    case 'c':
+    key = chords[3];
+    break;
+    case 'c-sharp-d-flat':
+    key = chords[4];
+    break;
+    case 'd':
+    key = chords[5];
+    break;
+    case 'd-sharp-e-flat':
+    key = chords[6];
+    break;
+    case 'e':
+    key = chords[7];
+    break;
+    case 'f':
+    key = chords[8];
+    break;
+    case 'f-sharp-g-flat':
+    key = chords[9];
+    break;
+    case 'g':
+    key = chords[10];
+    break;
+    case 'g-sharp-a-flat':
+    key = chords[11];
+    break;
+    case 'a':
+    key = chords[0];
+    break;
+    case 'a-sharp-b-flat':
+    key = chords[1];
+    break;
+    case 'b':
+    key = chords[2];
     break;
   default:
   }

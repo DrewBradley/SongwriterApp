@@ -64,6 +64,10 @@ body {
     box-shadow: 0 0 1rem #000000;
   }
 
+  .instruction {
+    font-size: 2em;
+  }
+
 
   @media screen and (max-width: 600px) {
     h1 {
