@@ -7,3 +7,5 @@ This app was created entirely with JavaScript on an HTML page with CSS styling.
 
 ### Application Images
 ![desktop view](https://media.giphy.com/media/BkJ3E9dEzStueWHaWk/giphy.gif)
+![mobile view](https://media.giphy.com/media/TM8frZhZYu7Is9p7JL/giphy.gif)
+![mobile view 2](https://media.giphy.com/media/LlXESD2H2sfla4tCoB/giphy.gif)
