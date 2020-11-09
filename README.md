@@ -5,6 +5,22 @@ Create new chord progressions at the press of a button! This app allows the user
 ## Technologies
 This app was created entirely with JavaScript on an HTML page with CSS styling.
 
+## Deployed Site
+[SongwriterApp](https://drewbradley.github.io/SongwriterApp/)
+
+## Download
+Clone the repository to your local machine:
+
+```git clone git@github.com:DrewBradley/SongwriterApp.git```
+
+Change directories:
+
+```cd SongwriterApp```
+
+Open ```index.html``` in your browser of choice.
+
+```open index.html```
+
 ## Application Images
 #### Desktop
 ![desktop view](https://media.giphy.com/media/BkJ3E9dEzStueWHaWk/giphy.gif)<br />
