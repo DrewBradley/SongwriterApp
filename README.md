@@ -4,3 +4,6 @@ Create new chord progressions at the press of a button! This app allows the user
 
 ### Technologies
 This app was created entirely with JavaScript on an HTML page with CSS styling.
+
+### Application Images
+![desktop view](https://media.giphy.com/media/BkJ3E9dEzStueWHaWk/giphy.gif)
